@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react"
-import { fetchAdherentById } from '../Services/services'
+import { fetchAdherentById, fetchEmpruntsCountByAdherent, fetchEmpruntsByAdherent, fetchLivreByAdherent } from '../Services/services'
 import { useParams} from "react-router-dom"
 
 function AdherentDetails() {
 
   const [adherent, setAdherent] = useState({})
- 
+  const [empruntsCount, setEmpruntsCount] = useState({})
+  const [emprunts, setEmprunts] = useState({})
+  const [livres, setLivres] = useState({})
+
  
   const { adherentId } = useParams()
   useEffect(() => {
@@ -16,6 +19,38 @@ function AdherentDetails() {
     }
     fetchData()
   }, [adherentId])
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result2 = await fetchEmpruntsCountByAdherent(adherentId)
+      setEmpruntsCount(result2)
+      console.log("result: ",result2)
+    }
+    fetchData()
+  }, [adherentId])
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      const result3 = await fetchEmpruntsByAdherent(adherentId)
+      setEmprunts(result3)
+      
+    }
+    fetchData()
+  }, [adherentId])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result4 = await fetchLivreByAdherent(emprunts.idLiv)
+      setLivres(result4)
+      
+    }
+    fetchData()
+  }, [emprunts.idLiv])
+  
+  console.log("nb", empruntsCount)
+  console.log("liv", livres)
+
 
   return (
     <div className="adherent-details">
@@ -60,7 +95,7 @@ function AdherentDetails() {
                     
                 </div>
                 <div className="box-body">
-                    {adherent.nbEmp}
+                {JSON.stringify(empruntsCount) + " Emprunts"}
                 </div>
                 <div className="box-header with-border">
                     <h3 className="box-title">Télephone:</h3>
@@ -75,14 +110,7 @@ function AdherentDetails() {
                 </div>
                 <div className="box-body">
                 { //console.log(adherent.livreEmp)
-                    adherent.livreName
-                
-                  /* const listLivre = adherent.livreEmp.map((item) => { <li>{item}</li>});
-                  adherent.livreEmp.map( (adherent) => (
-                    console.log(adherent)
-                    //adherent
-                                      
-                     ))*/
+                  livres && livres.libellé
                 }
                 </div>
                 <div className="box-header with-border">
@@ -90,14 +118,14 @@ function AdherentDetails() {
                     
                 </div>
                 <div className="box-body">
-                    {adherent.dateEmp}
+                    { new Date(emprunts.dateEmp).toString() }
                 </div>
                 <div className="box-header with-border">
                     <h3 className="box-title">Date de retour:</h3>
                     
                 </div>
                 <div className="box-body">
-                    {adherent.dateRet}
+                    {emprunts.dateRet}
                 </div>
                
                 </div>

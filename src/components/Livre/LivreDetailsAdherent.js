@@ -1,12 +1,45 @@
 import React, { useEffect, useState } from "react"
-import { fetchLivreById } from '../Services/services'
-import { useParams} from "react-router-dom"
+import { fetchLivreById, fetchEmpruntsCountByAdherent } from '../Services/services'
+import { useParams, useLocation} from "react-router-dom"
 
-function LivreDetails() {
-
+function LivreDetailsAdherent() {
+  
+    let location = useLocation(); 
+    const adherent = location.state.user
+    console.log(adherent)
+  
   const [livre, setLivres] = useState({})
+  const [emprunt, setemprunt] = useState([])
+    
+
+    const addEmprunt = (date, idAd, idLiv, dateEmp, dateRet)=>{
+        setemprunt(precEmprunts => 
+          [...precEmprunts,
+          {id:precEmprunts.length+1 ,date, idAd, idLiv, dateEmp, dateRet}
+          ])
+         localStorage.setItem("emprunt", JSON.stringify(emprunt))
+         var retrievedObject = localStorage.getItem('emprunt')
+         console.log('retrievedObject: ', JSON.parse(retrievedObject));
+         alert("Vous avez emprunté le livre Vous devez le rendre avant 15 jours")
+        
+         
+      }
  
- 
+    const emprunterLivre = () => {
+        const nb = fetchEmpruntsCountByAdherent(adherent.id)
+        nb.then((value) => {
+          console.log('nb',value);
+          if(value < 2) 
+          addEmprunt(new Date(), adherent.id, livre.id, new Date(), "") 
+          else
+           alert("Vous pouvez pas emrunter vous avez dépassé 2")
+        });
+        //console.log('nb',nb)
+       
+            
+   
+    }
+
   const { livreId } = useParams()
   useEffect(() => {
     const fetchData = async () => {
@@ -48,7 +81,7 @@ function LivreDetails() {
                     {livre.auteur}
                 </div>
                 <div className="box-header with-border">
-                    <h3 className="box-title">Mail:</h3>
+                    <h3 className="box-title">Edition:</h3>
                     
                 </div>
                 <div className="box-body">
@@ -61,6 +94,11 @@ function LivreDetails() {
                 <div className="box-body">
                     {livre.nbExmp}
                 </div>
+
+                <div className="box-body">
+                <button  className="btn btn-success" onClick={emprunterLivre}>Emprunter</button>
+                </div>
+                
                 
                
                 </div>
@@ -85,4 +123,4 @@ function LivreDetails() {
   )
 }
 
-export default LivreDetails
+export default LivreDetailsAdherent

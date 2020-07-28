@@ -24,17 +24,7 @@ export default function LivrePage(props){
   const formVisibility=()=>{
     setIsVisibleForm(!isVisibleForm)
   }
-/*
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true)
-      const result= await fetchLivres()
-      setLivres(result)
-      setLoading(false)
-    }
-    fetchData()
-  }, [])
-*/
+
 
 useEffect(() => {
   const fetchData = async () => {
@@ -59,10 +49,10 @@ useEffect(() => {
   //console.log(Livres);
 
   
-  const addLivre = (libellé, auteur, édition, nbExmp)=>{
+  const addLivre = (libellé, auteur, édition, nbExmp,etat)=>{
     setLivres(precLivres => 
       [...precLivres,
-      {id:precLivres.length+1 ,libellé, auteur, édition, nbExmp}
+      {id:precLivres.length+1 ,libellé, auteur, édition, nbExmp,etat}
       ])
   }
 
@@ -70,8 +60,8 @@ useEffect(() => {
     const newLivres=livres.filter(livre=>livre.id!==id)
     setLivres(newLivres)
   }
-  const updateLivre = (id,libellé, auteur, édition, nbExmp)=>{
-    const newLivres=livres.map(livre=>livre.id===id?({libellé, auteur, édition, nbExmp}): livre)
+  const updateLivre = (id,libellé, auteur, édition, nbExmp,etat)=>{
+    const newLivres=livres.map(livre=>livre.id===id?({libellé, auteur, édition, nbExmp,etat}): livre)
     setLivres(newLivres)
   }
 

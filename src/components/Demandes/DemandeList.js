@@ -38,6 +38,7 @@ export default function DemandeList(props) {
                                       <th>Etat</th>
                                       <th>Accepter</th>
                                       <th>Refuser</th>
+                                      <th>Supprimer</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,7 +53,7 @@ export default function DemandeList(props) {
                                       tel ={demande.tel}
                                       etat={demande.etat}
                                       refuDemande={props.refuDemande}
-                                      acceptDemande={props.acceptDemande} >  
+                                      updateDemande={props.updateDemande} >  
                                     </Demande>
                                     
                                    

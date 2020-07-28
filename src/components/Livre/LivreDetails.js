@@ -48,7 +48,7 @@ function LivreDetails() {
                     {livre.auteur}
                 </div>
                 <div className="box-header with-border">
-                    <h3 className="box-title">Mail:</h3>
+                    <h3 className="box-title">Edition:</h3>
                     
                 </div>
                 <div className="box-body">

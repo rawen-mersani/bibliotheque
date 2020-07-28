@@ -35,7 +35,9 @@ export default function LivreList(props) {
                                       <th>Auteur</th>
                                       <th>Edition</th>
                                       <th>Nombre exemplares</th>
+                                      <th>Etat</th>
                                       <th>Détails</th>
+                                      <th>Archiver</th>
                                       <th>Modifier</th>
                                       <th>Supprimer</th>
                                     </tr>
@@ -50,6 +52,7 @@ export default function LivreList(props) {
                                       auteur ={livre.auteur} 
                                       édition ={livre.édition} 
                                       nbExmp ={livre.nbExmp}
+                                      etat={livre.etat}
                                       deleteLivre={props.deleteLivre}
                                       updateLivre={props.updateLivre} >  
                                     </Livre>

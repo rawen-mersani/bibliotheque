@@ -1,0 +1,382 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test adherents list should render an array of tasks list 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class=""
+      >
+        <section
+          class="content"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-xs-12"
+            >
+              <div
+                class="box"
+              >
+                <div
+                  class="box-header"
+                >
+                  <h3
+                    class="box-title"
+                  >
+                    Liste adherents
+                  </h3>
+                  <br />
+                  <br />
+                  <button
+                    class="btn btn-info"
+                  >
+                    Afficher liste
+                  </button>
+                </div>
+                <div
+                  class="box-body"
+                >
+                  <table
+                    class="table table-bordered table-hover"
+                    id="example2"
+                  >
+                    <thead>
+                      <tr>
+                        <th>
+                          Nom
+                        </th>
+                        <th>
+                          Prénom
+                        </th>
+                        <th>
+                          Mail
+                        </th>
+                        <th>
+                          Télephone
+                        </th>
+                        <th>
+                          Etat
+                        </th>
+                        <th>
+                          Détails
+                        </th>
+                        <th>
+                          Bannir
+                        </th>
+                        <th>
+                          Modifier
+                        </th>
+                        <th>
+                          Supprimer
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          mersani
+                        </td>
+                        <td>
+                          rawen
+                        </td>
+                        <td>
+                          rawen@mail.com
+                        </td>
+                        <td>
+                          12345678
+                        </td>
+                        <td>
+                          non
+                        </td>
+                        <td>
+                          <a
+                            href="/Adhérents/1"
+                          >
+                            Afficher plus
+                          </a>
+                        </td>
+                        <td>
+                          <button
+                            class="fa fa-ban btn btn-warning"
+                          />
+                        </td>
+                        <td>
+                          <button
+                            class="fa fa-edit btn btn-info"
+                          />
+                        </td>
+                        <td>
+                          <button
+                            class="fa fa-remove btn btn-danger"
+                            data-testid="deleteAdherent"
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          missaoui
+                        </td>
+                        <td>
+                          rym
+                        </td>
+                        <td>
+                          mail2@mail.com
+                        </td>
+                        <td>
+                          12345678
+                        </td>
+                        <td>
+                          non
+                        </td>
+                        <td>
+                          <a
+                            href="/Adhérents/2"
+                          >
+                            Afficher plus
+                          </a>
+                        </td>
+                        <td>
+                          <button
+                            class="fa fa-ban btn btn-warning"
+                          />
+                        </td>
+                        <td>
+                          <button
+                            class="fa fa-edit btn btn-info"
+                          />
+                        </td>
+                        <td>
+                          <button
+                            class="fa fa-remove btn btn-danger"
+                            data-testid="deleteAdherent"
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class=""
+    >
+      <section
+        class="content"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="col-xs-12"
+          >
+            <div
+              class="box"
+            >
+              <div
+                class="box-header"
+              >
+                <h3
+                  class="box-title"
+                >
+                  Liste adherents
+                </h3>
+                <br />
+                <br />
+                <button
+                  class="btn btn-info"
+                >
+                  Afficher liste
+                </button>
+              </div>
+              <div
+                class="box-body"
+              >
+                <table
+                  class="table table-bordered table-hover"
+                  id="example2"
+                >
+                  <thead>
+                    <tr>
+                      <th>
+                        Nom
+                      </th>
+                      <th>
+                        Prénom
+                      </th>
+                      <th>
+                        Mail
+                      </th>
+                      <th>
+                        Télephone
+                      </th>
+                      <th>
+                        Etat
+                      </th>
+                      <th>
+                        Détails
+                      </th>
+                      <th>
+                        Bannir
+                      </th>
+                      <th>
+                        Modifier
+                      </th>
+                      <th>
+                        Supprimer
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        mersani
+                      </td>
+                      <td>
+                        rawen
+                      </td>
+                      <td>
+                        rawen@mail.com
+                      </td>
+                      <td>
+                        12345678
+                      </td>
+                      <td>
+                        non
+                      </td>
+                      <td>
+                        <a
+                          href="/Adhérents/1"
+                        >
+                          Afficher plus
+                        </a>
+                      </td>
+                      <td>
+                        <button
+                          class="fa fa-ban btn btn-warning"
+                        />
+                      </td>
+                      <td>
+                        <button
+                          class="fa fa-edit btn btn-info"
+                        />
+                      </td>
+                      <td>
+                        <button
+                          class="fa fa-remove btn btn-danger"
+                          data-testid="deleteAdherent"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        missaoui
+                      </td>
+                      <td>
+                        rym
+                      </td>
+                      <td>
+                        mail2@mail.com
+                      </td>
+                      <td>
+                        12345678
+                      </td>
+                      <td>
+                        non
+                      </td>
+                      <td>
+                        <a
+                          href="/Adhérents/2"
+                        >
+                          Afficher plus
+                        </a>
+                      </td>
+                      <td>
+                        <button
+                          class="fa fa-ban btn btn-warning"
+                        />
+                      </td>
+                      <td>
+                        <button
+                          class="fa fa-edit btn btn-info"
+                        />
+                      </td>
+                      <td>
+                        <button
+                          class="fa fa-remove btn btn-danger"
+                          data-testid="deleteAdherent"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

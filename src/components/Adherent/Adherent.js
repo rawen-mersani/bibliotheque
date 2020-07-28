@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, BrowserRouter } from 'react-router-dom';
 
 export default function Adherent(props){
 
@@ -8,12 +8,16 @@ export default function Adherent(props){
     const [nameToUpdate, setNameToUpdate] = useState(props.name)
     const [pnameToUpdate, setPnameToUpdate] = useState(props.pname)
     const [mailToUpdate, setMailToUpdate] = useState(props.mail)
-    const [nbEmpToUpdate, setNbEmpToUpdate] = useState(props.nbEmp)
     const [telToUpdate, setTelToUpdate] = useState(props.tel)
 
     const handleUpdateAdherent = () => {
-        props.updateAdherent(props.id,nameToUpdate, pnameToUpdate, mailToUpdate, nbEmpToUpdate, telToUpdate)
+        props.updateAdherent(props.id,nameToUpdate, pnameToUpdate, mailToUpdate,  telToUpdate, props.etat)
         setUpdateMode(false)
+    }
+
+    const handleBannir = () => {
+        props.updateAdherent(props.id,props.name, props.pname, props.mail ,props.tel ,"oui")
+        
     }
     
     //console.log("id: ",props.id);
@@ -26,11 +30,12 @@ export default function Adherent(props){
                 <td>{props.name}</td>
                 <td>{props.pname}</td>
                 <td>{props.mail}</td>
-                <td>{props.nbEmp} Emprunts</td>
                 <td>{props.tel}</td>
-                <td><Link to= {`/Adhérents/${props.id}`}>Afficher plus</Link></td>
-                <td><button className="fa fa-edit btn btn-warning" onClick={()=>setUpdateMode(true)}></button></td>
-                <td><button className="fa fa-remove btn btn-danger" onClick={()=>props.deleteAdherent(props.id)}></button></td>
+                <td>{props.etat}</td>
+                <td><BrowserRouter><Link to= {`/Adhérents/${props.id}`}>Afficher plus</Link></BrowserRouter></td>
+                <td><button className="fa fa-ban btn btn-warning" onClick={handleBannir}></button></td>
+                <td><button className="fa fa-edit btn btn-info" onClick={()=>setUpdateMode(true)}></button></td>
+                <td><button data-testid="deleteAdherent" className="fa fa-remove btn btn-danger" onClick={()=>props.deleteAdherent(props.id)}></button></td>
             </tr> 
             </>
        ) : (
@@ -60,14 +65,7 @@ export default function Adherent(props){
                         </div>
                     </div>
                 </td>
-                <td>
-                    <div className="form-group">
-                        <div className="col-sm-10">
-                            <input type="text" className="form-control"  name="name" value={nbEmpToUpdate}
-                                onChange={(e) => setNbEmpToUpdate(e.target.value)}  />
-                        </div>
-                    </div>
-                </td>
+               
                 <td>
                     <div className="form-group">
                         <div className="col-sm-10">
@@ -77,7 +75,7 @@ export default function Adherent(props){
                     </div>
                 </td>
                 <td>
-                    <button className="btn btn-warning" onClick={handleUpdateAdherent}>Mettre à jour</button>
+                    <button className="btn btn-success" onClick={handleUpdateAdherent}>Mettre à jour</button>
                 </td>
                 <td>
                 <button  className="btn btn-default" onClick={()=>setUpdateMode(false)}>Cancel</button>

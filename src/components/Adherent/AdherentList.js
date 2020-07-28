@@ -34,9 +34,10 @@ export default function AdherentList(props) {
                                       <th>Nom</th>
                                       <th>Prénom</th>
                                       <th>Mail</th>
-                                      <th>Nombre emprunts</th>
                                       <th>Télephone</th>
+                                      <th>Etat</th>
                                       <th>Détails</th>
+                                      <th>Bannir</th>
                                       <th>Modifier</th>
                                       <th>Supprimer</th>
                                     </tr>
@@ -50,8 +51,8 @@ export default function AdherentList(props) {
                                       name={adherent.name} 
                                       pname ={adherent.pname} 
                                       mail ={adherent.mail} 
-                                      nbEmp ={adherent.nbEmp}
                                       tel ={adherent.tel}
+                                      etat={adherent.etat}
                                       deleteAdherent={props.deleteAdherent}
                                       updateAdherent={props.updateAdherent} >  
                                     </Adhrent>

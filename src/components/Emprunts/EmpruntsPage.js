@@ -1,6 +1,6 @@
 import React, {useState, useEffect,useRef} from 'react';
 import EmpruntsList from './EmpruntsList';
-import { fetchEmpruntsCours, searchEmpruntsCours, fetchEmpruntsRetard, searchEmpruntsRetard } from '../Services/services';
+import { fetchEmpruntsCours, searchEmpruntsCours, fetchEmpruntsRetard } from '../Services/services';
 import '../Adherent/adherentPage.css'
 
 
@@ -11,7 +11,7 @@ import '../Adherent/adherentPage.css'
 
 export default function EmpruntsPage(props){
 
-
+  const [emprunts, setEmprunts] = useState([])
   const [empruntsCours, setEmpruntsCours] = useState([])
   const [empruntsRetard, setEmpruntsRetard] = useState([])
   const inputSearch = useRef(null)
@@ -20,7 +20,25 @@ export default function EmpruntsPage(props){
   const [loading, setLoading] = useState(false)
   const [searchValue, setSearchValue] = useState("")
 
-
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setLoading(true)
+  //     if(!searchValue){
+  //       const result= await fetchEmprunts()
+  //       setEmprunts(result)
+  //       setLoading(false)
+  //       //inputSearch.current.focus()
+  //     } else {
+  //       const result= await searchEmprunts(searchValue)
+  //       setEmprunts(result)
+  //       setLoading(false)
+  //       inputSearch.current.focus()
+  //     }
+     
+  //   }
+  //   fetchData()
+  // }, [searchValue])
+    
   
 
 useEffect(() => {
@@ -51,18 +69,13 @@ useEffect(() => {
       setEmpruntsRetard(result)
       setLoading(false)
       //inputSearch.current.focus()
-    } else {
-      const result= await searchEmpruntsRetard(searchValue)
-      setEmpruntsRetard(result)
-      setLoading(false)
-      inputSearch.current.focus()
-    }
+    } 
    
   }
   fetchData()
 }, [searchValue])
 
-  console.log(empruntsCours);
+  console.log(emprunts);
 
   
   

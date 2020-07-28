@@ -34,7 +34,7 @@ let objects=[
           <aside className="main-sidebar">
             <section className="sidebar">
               
-              <UserPanel/>
+              <UserPanel />
               <SearchForm/>
               {/*<ul className="sidebar-menu" data-widget="tree">
                 <li className="header">MAIN NAVIGATION</li>

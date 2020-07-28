@@ -1,0 +1,33 @@
+import React from "react"
+import { render } from "@testing-library/react"
+import Adherent from "../components/Adherent/Adherent"
+
+describe("test add todo", () => {
+  const mockAdherent = {
+    id:"1",
+    name:"Bouguerra",
+    pname:"Abderrahmen",
+    mail:"Abderrahmen@mail.com",
+    tel:27777231,
+      }
+  // test("should render adherent data", () => {
+  //   const mockDeleteAdherent = jest.fn()
+  //   const { getByTestId } = render(
+  //     <Adherent
+  //       id={mockAdherent.id } 
+  //       name={mockAdherent.name} 
+  //       pname ={mockAdherent.pname} 
+  //       mail ={mockAdherent.mail} 
+  //       tel ={mockAdherent.tel}
+  //       etat={mockAdherent.etat}
+  //       deleteAdherent={mockDeleteAdherent}
+  //     />
+  //   )
+  //   const item = getByTestId('nom')
+  //   expect(item).toHaveTextContent(
+  //     mockAdherent.name 
+  //   )
+    
+  // })
+
+})

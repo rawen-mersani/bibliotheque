@@ -50,7 +50,7 @@ useEffect(() => {
     const newDemandes=demandes.filter(demande=>demande.id!==id)
     setdemandes(newDemandes)
   }
-  const acceptDemande = (id,name, pname, mail, tel, etat)=>{
+  const updateDemande = (id,name, pname, mail, tel, etat)=>{
     const newDemandes=demandes.map(demande=>demande.id===id?({name, pname, mail, tel, etat}): demande)
     setdemandes(newDemandes)
   }
@@ -98,7 +98,7 @@ useEffect(() => {
                         </div>
                     <DemandeList demandes={demandes}
                     refuDemande={refuDemande}
-                    acceptDemande={acceptDemande}  />
+                    updateDemande={updateDemande}  />
 
                       
 

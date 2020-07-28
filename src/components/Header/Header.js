@@ -2,6 +2,12 @@ import React from 'react';
 import '../Adherent/adherentPage.css'
 
 function Header(props){
+
+  // let location = useLocation(); 
+  // console.log("hhh", location)
+  // const user = location.state.adherant
+  
+
    
 
     return (
@@ -22,7 +28,7 @@ function Header(props){
         
         {/* Notifications: style can be found in dropdown.less */}
         <li className="dropdown notifications-menu">
-          <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+          <a href="page" className="dropdown-toggle" data-toggle="dropdown">
             <i className="fa fa-bell-o" />
           </a>
           <ul className="dropdown-menu">
@@ -37,7 +43,7 @@ function Header(props){
                 </li>
                 
                 <li>
-                  <a href="#">
+                  <a href="page">
                     <i className="fa fa-shopping-cart text-green" /> 25 sales made
                   </a>
                 </li>
@@ -52,7 +58,7 @@ function Header(props){
         <li className="dropdown user user-menu">
           <a href="#" className="dropdown-toggle" data-toggle="dropdown">
             <img src="dist/img/user.jpg" className="user-image" alt="User Image" />
-            <span className="hidden-xs">Mersani Rawen</span>
+            <span className="hidden-xs">{/*user && user.name} {user && user.pname*/}Mersani Rawen </span>
           </a>
           <ul className="dropdown-menu">
             {/* User image */}

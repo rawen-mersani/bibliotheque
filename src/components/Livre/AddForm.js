@@ -1,24 +1,26 @@
 import React, { useState, useRef, memo } from "react"
+import '../Adherent/adherentPage.css'
 
-
-function AddForm({addLivre}) {
+function AddForm({addLivre, maxNbExmpValue}) {
     
   const [libellé, setLibellé] = useState("")
   const [auteur, setAuteur] = useState("")
   const [édition, setEdition ]= useState("")
   const [nbExmp, setNbExmp] = useState(0)
+  const [etat, setEtat] = useState("non")
 
 
 
   
   const inputName = useRef(null)
   const handleAddLivre = () => {
-    addLivre(libellé, auteur, édition, nbExmp)
+    addLivre(libellé, auteur, édition, nbExmp,etat)
     inputName.current.focus()
     setLibellé("")
     setAuteur("")
     setEdition("")
     setNbExmp(0)
+    setEtat("non")
     
   }
   /*useEffect(() => {
@@ -64,8 +66,14 @@ function AddForm({addLivre}) {
             <div className="form-group">
                 <label htmlFor="inputPassword3" className="col-sm-2 control-label">Nombre d'exemplaires</label>
                 <div className="col-sm-10">
-                    <input type="number" className="form-control" id="nbExmp" placeholder="Nombre Exemplaires"
+                    <input aria-label="nbExmp" type="number" className="form-control" id="nbExmp" placeholder="Nombre Exemplaires"
                     value={nbExmp} name="nbExmp" onChange={e => setNbExmp(e.target.value)} />
+                    {nbExmp > maxNbExmpValue && (
+            <div data-testid="error-nbExmp" className="error">
+                Le nombre d'exemplaires doit etre inférieur à {maxNbExmpValue}
+
+            </div>
+        )}
                 </div>
             </div>
             
@@ -76,8 +84,9 @@ function AddForm({addLivre}) {
         <div className="box-footer">
         <button  className="btn btn-default">Cancel</button>
         <button  className="btn btn-success pull-right" onClick={handleAddLivre}>Ajouter</button>
+
         </div>
-        {/* /.box-footer */}
+        
     </div>
 </div>
 
@@ -91,4 +100,9 @@ function AddForm({addLivre}) {
     </section>
   )
 }
+AddForm.defaultProps = {
+    maxNbExmpValue : 20,
+}
+
+
 export default memo(AddForm)

@@ -15,3 +15,12 @@
     margin-left: 950px;
     margin-bottom: -55px;
 }
+
+.selec {
+    margin-left: 920px;
+    margin-bottom: -125px;
+}
+
+.error {
+    color: red;
+}

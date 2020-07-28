@@ -14,6 +14,9 @@ export default function AdherentPage(props){
 
 
   const [adherents, setAdherents] = useState([])
+  
+
+
   const inputSearch = useRef(null)
 
   const [isVisibleForm, setIsVisibleForm] = useState(false)
@@ -35,7 +38,6 @@ export default function AdherentPage(props){
     fetchData()
   }, [])
 */
-
 useEffect(() => {
   const fetchData = async () => {
     setLoading(true)
@@ -56,13 +58,14 @@ useEffect(() => {
 }, [searchValue])
   
 
+
   //console.log(adherents);
 
   
-  const addAdherent = (name, pname, mail, nbEmp,tel)=>{
-    setAdherents(precAdherents => 
+  const addAdherent = async (name, pname, mail,tel,etat)=>{
+    await setAdherents(precAdherents => 
       [...precAdherents,
-      {id:precAdherents.length+1 ,name, pname, mail, nbEmp, tel}
+      {id:precAdherents.length+1 ,name, pname, mail, tel,etat}
       ])
   }
 
@@ -70,8 +73,8 @@ useEffect(() => {
     const newAdherents=adherents.filter(adherent=>adherent.id!==id)
     setAdherents(newAdherents)
   }
-  const updateAdherent = (id,name, pname, mail, nbEmp,tel)=>{
-    const newAdherents=adherents.map(adherent=>adherent.id===id?({name, pname, mail, nbEmp,tel}): adherent)
+  const updateAdherent = (id,name, pname, mail,tel,etat)=>{
+    const newAdherents=adherents.map(adherent=>adherent.id===id?({name, pname, mail,tel,etat}): adherent)
     setAdherents(newAdherents)
   }
 
@@ -118,7 +121,8 @@ useEffect(() => {
                         </div>
                     <AdherentList adherents={adherents}
                     deleteAdherent={deleteAdherent}
-                    updateAdherent={updateAdherent}  />
+                    updateAdherent={updateAdherent}
+                    />
 
                       
 

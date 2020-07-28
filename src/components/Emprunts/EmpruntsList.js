@@ -32,11 +32,9 @@ export default function EmpruntsList(props) {
                                 <thead>
                                     <tr>
                                       <th>Date</th>
-                                      <th>Nom</th>
-                                      <th>Prénom</th>
-                                      <th>Titre</th>
                                       <th>Emprunté le</th>
                                       <th>Rendu le</th>
+                                      <th>Détails</th>
                                       
                                     </tr>
                                 </thead>
@@ -45,10 +43,8 @@ export default function EmpruntsList(props) {
                                   
                                     isVisible && props.emprunts.map( (emprunt) => (
                                    <Emprunts key={emprunt.id}
+                                      id={emprunt.id}
                                       date={emprunt.date } 
-                                      name={emprunt.name} 
-                                      pname ={emprunt.pname} 
-                                      titre ={emprunt.titre} 
                                       dateEmp ={emprunt.dateEmp}
                                       dateRet ={emprunt.dateRet}
                                        >  

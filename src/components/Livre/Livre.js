@@ -11,8 +11,13 @@ export default function Livre(props){
     const [nbExmpToUpdate, setNbExmpToUpdate] = useState(props.nbExmp)
 
     const handleUpdateLivre = () => {
-        props.updateLivre(props.id, libelléToUpdate, auteurToUpdate, éditionToUpdate, nbExmpToUpdate)
+        props.updateLivre(props.id, libelléToUpdate, auteurToUpdate, éditionToUpdate, nbExmpToUpdate, props.etat)
         setUpdateMode(false)
+    }
+
+    const handleArchiver = () => {
+        props.updateLivre(props.id,props.libellé , props.auteur, props.édition, props.nbExmp ,"oui")
+        
     }
     
     //console.log("id: ",props.id);
@@ -26,8 +31,10 @@ export default function Livre(props){
                 <td>{props.auteur}</td>
                 <td>{props.édition}</td>
                 <td>{props.nbExmp} Exemplaires</td>
+                <td>{props.etat}</td>
                 <td><Link to= {`/livres/${props.id}`}>Afficher plus</Link></td>
-                <td><button className="fa fa-edit btn btn-warning" onClick={()=>setUpdateMode(true)}></button></td>
+                <td><button className="fa fa-ban btn btn-warning" onClick={handleArchiver}></button></td>
+                <td><button className="fa fa-edit btn btn-info" onClick={()=>setUpdateMode(true)}></button></td>
                 <td><button className="fa fa-remove btn btn-danger" onClick={()=>props.deleteLivre(props.id)}></button></td>
             </tr> 
             </>
